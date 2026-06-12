@@ -3,10 +3,10 @@
 class Coffee:
     def __init__(self, size: str, price: float):
         valid_sizes = ["small", "medium", "large"]
-        if size not in valid_sizes:
-            raise ValueError("size must be Small, Medium, or Large\n ")
+        if not isinstance(size,str) or size.lower() not in valid_sizes:
+            raise ValueError("size must be Small, Medium, or Large")
         
-        self.size = size
+        self.size = size.capitalize()
         self._base_price = price
         self._tip_amount = 0.0
         
