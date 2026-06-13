@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 class Book:
-    def __init__(self,title,author,total_pages):
-        self.title = title
+    def __init__(self, title: str, author: str, total_pages: int):
+        # Fix: Add the underscore so it targets the private attribute directly
+        self._title = title
         self._author = author
         self._total_pages = total_pages
 
@@ -16,4 +17,4 @@ class Book:
 
     @property
     def total_pages(self):
-        return self._total_pages    
+        return self._total_pages
